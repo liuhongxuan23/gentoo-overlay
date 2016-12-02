@@ -14,16 +14,16 @@ JETBRAINS_FILES_REMOVE="
 	plugins/python/helpers/pydev/pydevd_attach_to_process/attach_x86_64.dylib
 "
 JETBRAINS_FILES_AMD64="
-	plugins/python/helpers/pydev/pydevd_attach_to_process/attach_amd64.so
+	plugins/python/helpers/pydev/pydevd_attach_to_process/attach_linux_amd64.so
 "
 JETBRAINS_FILES_X86="
-	plugins/python/helpers/pydev/pydevd_attach_to_process/attach_x86.so
+	plugins/python/helpers/pydev/pydevd_attach_to_process/attach_linux_x86.so
 "
 
 inherit jetbrains versionator
 
-PV_STRING="$(get_version_component_range 4-6)"
-MY_PV="$(get_version_component_range 1-3)"
+PV_STRING="$(get_version_component_range 3-5)"
+MY_PV="$(get_version_component_range 1-2)"
 
 SRC_URI="http://download.jetbrains.com/cpp/CLion-${MY_PV}.tar.gz -> ${PN}-${MY_PV}.tar.gz"
 DESCRIPTION="A complete toolset for C and C++ development"

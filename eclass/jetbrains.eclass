@@ -62,6 +62,7 @@ IUSE="-custom-jdk"
 DEPEND=""
 RDEPEND="!custom-jdk? ( virtual/jre )"
 
+RESTRICT="strip"
 QA_PREBUILT="${JETBRAINS_INSTALL_PATH}"
 
 # @FUNCTION: jetbrains_src_prepare
