@@ -23,7 +23,9 @@ inherit eutils
 : ${JETBRAINS_DESKTOP_FILE:="jetbrains-${JETBRAINS_PROGRAM_NAME}.desktop"}
 
 # @ECLASS_VARIABLE: JETBRAINS_FILES_REMOVE
-JETBRAINS_FILES_REMOVE+="
+: ${JETBRAINS_FILES_REMOVE:=""}
+
+JETBRAINS_FILES_REMOVE_DEFAULT="
 	bin/fsnotifier-arm
 	lib/libpty/macosx
 	lib/libpty/win
@@ -35,11 +37,12 @@ JETBRAINS_FILES_REMOVE+="
 	plugins/tfsIntegration/lib/native/macosx
 	plugins/tfsIntegration/lib/native/solaris
 	plugins/tfsIntegration/lib/native/win32
-	plugins/tplugins/tfsIntegration/lib/nativefsIntegration/lib/native/win32
 "
 
 # @ECLASS_VARIABLE: JETBRAINS_FILES_AMD64
-JETBRAINS_FILES_AMD64+="
+: ${JETBRAINS_FILES_AMD64:=""}
+
+JETBRAINS_FILES_AMD64_DEFAULT="
 	bin/${JETBRAINS_PROGRAM_NAME}64.vmoptions
 	bin/fsnotifier64
 	bin/libbreakgen64.so
@@ -49,7 +52,9 @@ JETBRAINS_FILES_AMD64+="
 "
 
 # @ECLASS_VARIABLE: JETBRAINS_FILES_X86
-JETBRAINS_FILES_X86+="
+: ${JETBRAINS_FILES_X86:=""}
+
+JETBRAINS_FILES_X86_DEFAULT="
 	bin/${JETBRAINS_PROGRAM_NAME}.vmoptions
 	bin/fsnotifier
 	bin/libbreakgen.so
@@ -70,12 +75,21 @@ jetbrains_src_prepare() {
 	use kernel_linux || die
 	use amd64 || use x86 || die
 
-	rm -rf ${JETBRAINS_FILES_REMOVE} || die
+	rm -rf ${JETBRAINS_FILES_REMOVE_DEFAULT} || die
+	if [[ -n ${JETBRAINS_FILES_REMOVE} ]]; then
+		rm -r ${JETBRAINS_FILES_REMOVE} || die
+	fi
 	if ! use amd64; then
-		rm -rf ${JETBRAINS_FILES_AMD64} || die
+		rm -rf ${JETBRAINS_FILES_AMD64_DEFAULT} || die
+		if [[ -n ${JETBRAINS_FILES_AMD64} ]]; then
+			rm -r ${JETBRAINS_FILES_AMD64} || die
+		fi
 	fi
 	if ! use x86; then
-		rm -rf ${JETBRAINS_FILES_X86} || die
+		rm -rf ${JETBRAINS_FILES_X86_DEFAULT} || die
+		if [[ -n ${JETBRAINS_FILES_X86} ]]; then
+			rm -r ${JETBRAINS_FILES_X86} || die
+		fi
 	fi
 	if ! use custom-jdk; then
 		if [[ -d jre ]]; then
