@@ -8,8 +8,8 @@ JETBRAINS_PN="idea"
 
 inherit jetbrains versionator
 
-PV_STRING="$(get_version_component_range 4-6)"
-MY_PV="$(get_version_component_range 1-3)"
+PV_STRING="$(get_version_component_range 3-5)"
+MY_PV="$(get_version_component_range 1-2)"
 
 DESCRIPTION="A complete toolset for web, mobile and enterprise development"
 HOMEPAGE="https://www.jetbrains.com/idea"
