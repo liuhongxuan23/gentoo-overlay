@@ -22,8 +22,8 @@ JETBRAINS_FILES_X86="
 
 inherit jetbrains versionator
 
-PV_STRING="$(get_version_component_range 4-6)"
-MY_PV="$(get_version_component_range 1-3)"
+PV_STRING="$(get_version_component_range 3-5)"
+MY_PV="$(get_version_component_range 1-2)"
 
 SRC_URI="http://download.jetbrains.com/cpp/CLion-${MY_PV}.tar.gz -> ${PN}-${MY_PV}.tar.gz"
 DESCRIPTION="A complete toolset for C and C++ development"
