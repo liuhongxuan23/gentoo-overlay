@@ -21,15 +21,12 @@ JETBRAINS_FILES_X86="
 
 inherit jetbrains versionator
 
-PV_STRING="$(get_version_component_range 4-6)"
-MY_PV="$(get_version_component_range 1-3)"
-
 DESCRIPTION="A complete toolset for web, mobile and enterprise development"
 HOMEPAGE="https://www.jetbrains.com/pycharm"
-SRC_URI="https://download.jetbrains.com/python/${PN}-${MY_PV}.tar.gz"
+SRC_URI="https://download.jetbrains.com/python/${P}.tar.gz"
 
 LICENSE="PyCharm_Academic PyCharm_Classroom PyCharm PyCharm_OpenSource PyCharm_Preview"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-S="${WORKDIR}/${JETBRAINS_PN}-${MY_PV}"
+S="${WORKDIR}/${JETBRAINS_PN}-${PV}"
