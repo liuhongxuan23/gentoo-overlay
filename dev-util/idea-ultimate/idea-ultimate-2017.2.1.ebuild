@@ -8,7 +8,7 @@ JETBRAINS_PN="idea"
 
 inherit jetbrains versionator
 
-PV_STRING="171.4694.70"
+PV_STRING="172.3544.35"
 
 DESCRIPTION="A complete toolset for web, mobile and enterprise development"
 HOMEPAGE="https://www.jetbrains.com/idea"
