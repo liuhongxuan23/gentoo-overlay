@@ -14,8 +14,8 @@ JETBRAINS_FILES_X86="
 
 inherit jetbrains versionator
 
-PV_STRING="$(get_version_component_range 5-6)"
-MY_PV="$(get_version_component_range 1-4)"
+PV_STRING="$(get_version_component_range 3-4)"
+MY_PV="$(get_version_component_range 1-2)"
 
 DESCRIPTION="A new Android development environment based on IntelliJ IDEA"
 HOMEPAGE="http://developer.android.com/sdk/installing/studio.html"
