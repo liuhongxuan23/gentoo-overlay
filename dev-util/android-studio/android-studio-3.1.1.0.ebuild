@@ -14,12 +14,11 @@ JETBRAINS_FILES_X86="
 
 inherit jetbrains versionator
 
-PV_STRING="$(get_version_component_range 3-4)"
-MY_PV="$(get_version_component_range 1-2)"
+PV_STRING="173.4697961"
 
 DESCRIPTION="A new Android development environment based on IntelliJ IDEA"
 HOMEPAGE="http://developer.android.com/sdk/installing/studio.html"
-SRC_URI="https://dl.google.com/dl/android/studio/ide-zips/${MY_PV}/${PN}-ide-${PV_STRING}-linux.zip"
+SRC_URI="https://dl.google.com/dl/android/studio/ide-zips/${PV}/${PN}-ide-${PV_STRING}-linux.zip"
 
 LICENSE="Apache-2.0"
 SLOT="0"
