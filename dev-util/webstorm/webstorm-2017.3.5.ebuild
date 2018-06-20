@@ -7,7 +7,7 @@ EAPI=5
 inherit jetbrains versionator
 
 MY_PN="WebStorm"
-PV_STRING="173.4127.31"
+PV_STRING="173.4674.32"
 
 DESCRIPTION="JavaScript IDE for client- and server-side development with Node.js"
 HOMEPAGE="http://www.jetbrains.com/webstorm"
