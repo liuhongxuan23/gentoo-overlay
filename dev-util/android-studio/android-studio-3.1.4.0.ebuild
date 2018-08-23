@@ -14,7 +14,7 @@ JETBRAINS_FILES_X86="
 
 inherit jetbrains versionator
 
-PV_STRING="173.4720617"
+PV_STRING="173.4907809"
 
 DESCRIPTION="A new Android development environment based on IntelliJ IDEA"
 HOMEPAGE="http://developer.android.com/sdk/installing/studio.html"
