@@ -5,6 +5,7 @@
 EAPI=5
 
 JETBRAINS_FILES_REMOVE="
+	bin/clang
 	bin/cmake
 	bin/gdb
 	bin/lldb
