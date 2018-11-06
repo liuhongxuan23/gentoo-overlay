@@ -105,16 +105,9 @@ jetbrains_src_prepare() {
 jetbrains_src_install() {
 	local dir="${JETBRAINS_INSTALL_PATH}"
 
-	insinto "${dir}"
-	doins -r *
+	dodir "${dir}"
+	cp -r * "${D}/${dir}" || die
 
-	fperms 755 "${dir}"/bin/{"${JETBRAINS_PROGRAM_NAME}".sh,inspect.sh}
-	if use amd64; then
-		fperms 755 "${dir}/bin/fsnotifier64"
-	fi
-	if use x86; then
-		fperms 755 "${dir}/bin/fsnotifier"
-	fi
 	make_wrapper "${JETBRAINS_PN}" "${dir}/bin/${JETBRAINS_PROGRAM_NAME}.sh"
 	domenu "${FILESDIR}/${JETBRAINS_DESKTOP_FILE}"
 

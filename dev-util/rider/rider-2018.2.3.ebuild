@@ -15,4 +15,7 @@ LICENSE="IDEA
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
+DEPEND="${DEPEND}
+	app-crypt/libsecret"
+
 S="${WORKDIR}/JetBrains Rider-${PV}"
